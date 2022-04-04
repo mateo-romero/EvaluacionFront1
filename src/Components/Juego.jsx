@@ -42,7 +42,12 @@ class Juego extends React.Component {
         <div className="opciones">
           <div className="opcion">
             <button
-              className="botones"
+              className={
+                this.state.historiaActual === "5a" ||
+                this.state.historiaActual === "5b"
+                  ? "hidden"
+                  : "botones"
+              }
               onClick={() =>
                 this.changeValue(
                   parseInt(actual2.id.charAt(0)) + 1,
@@ -57,7 +62,12 @@ class Juego extends React.Component {
           </div>
           <div className="opcion">
             <button
-              className="botones"
+              className={
+                this.state.historiaActual === "5a" ||
+                this.state.historiaActual === "5b"
+                  ? "hidden"
+                  : "botones"
+              }
               onClick={() =>
                 this.changeValue(
                   parseInt(actual2.id.charAt(0)) + 1,
@@ -73,13 +83,7 @@ class Juego extends React.Component {
         </div>
 
         <button
-          className={
-            this.state.historiaActual === "5a" ||
-            this.state.historiaActual === "1" ||
-            this.state.historiaActual === "5b"
-              ? "hidden"
-              : "botones"
-          }
+          className={this.state.historiaActual === "1" ? "hidden" : "botones"}
           onClick={() => this.deshacer("1")}
         >
           Volver Inicio
